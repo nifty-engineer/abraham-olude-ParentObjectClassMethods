@@ -59,9 +59,26 @@ public class SampleClass {
     public boolean b;
 
     //    implement a custom .equals(SampleClass other){} method here.
+    public boolean equals(SampleClass other){
+        //code here
 
+        if (other == this)
+            return true;
+        if (!(other instanceof SampleClass))
+            return false;
+        SampleClass o = (SampleClass)other;
+
+        boolean bEquals = (this.b == false && o.b == false)
+        || (this.b != false && this.b == o.b);
+        
+        return this.a == o.a && bEquals;
+    }
 
     //    implement a custom .toString(){} method here.
+    public String toString(){
+        //code here
 
+        return "this sample class has two fields, namely: int " + a + "and boolean " + b;
+    }
     
 }
